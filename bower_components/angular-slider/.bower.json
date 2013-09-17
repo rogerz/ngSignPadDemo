@@ -10,5 +10,6 @@
   },
   "_source": "git://github.com/prajwalkman/angular-slider.git",
   "_target": "~0.1.6",
-  "_originalSource": "angular-slider"
+  "_originalSource": "angular-slider",
+  "_direct": true
 }

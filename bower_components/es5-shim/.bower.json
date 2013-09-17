@@ -10,5 +10,6 @@
   },
   "_source": "git://github.com/kriskowal/es5-shim.git",
   "_target": "2.1.0",
-  "_originalSource": "es5-shim"
+  "_originalSource": "es5-shim",
+  "_direct": true
 }
