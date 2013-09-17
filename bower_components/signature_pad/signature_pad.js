@@ -96,8 +96,8 @@ var SignaturePad = (function (document) {
 
     SignaturePad.prototype.clear = function () {
         this._ctx.clearRect(0, 0, this._canvas.width, this._canvas.height);
-        this._reset();
         this.records = [];
+        this._reset();
     };
 
     SignaturePad.prototype.replay = function () {
@@ -142,6 +142,8 @@ var SignaturePad = (function (document) {
     };
 
     SignaturePad.prototype._reset = function () {
+        // record a dummy point to keep timestamp
+        this._recordStep(new Step(new Point(), "reset"));
         this.points = [];
         this._lastVelocity = 0;
         this._lastWidth = (this.opts.minWidth + this.opts.maxWidth) / 2;
@@ -210,6 +212,8 @@ var SignaturePad = (function (document) {
     SignaturePad.prototype._replayStep = function (step) {
         if (step.type === "dot") {
             this._addDot(step.point);
+        } else if (step.type === "reset") {
+            this._reset();
         } else {
             this._addPoint(step.point);
         }
