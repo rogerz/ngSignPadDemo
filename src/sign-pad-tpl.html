@@ -1,0 +1,32 @@
+<div id="sign-pad-area">
+  <canvas></canvas>
+</div>
+<div id="sign-pad-overlay">
+  <div id="sign-pad-btns">
+    <!--button><span class="glyphicon glyphicon-ok"></span></button-->
+    <button ng-click="pad.replay()"><span class="glyphicon glyphicon-play"></span></button>
+    <button ng-click="pad.clear()"><span class="glyphicon glyphicon-remove"></span></button>
+    <button ng-click="panel.show = !panel.show"><span class="glyphicon glyphicon-wrench"></span></button>
+  </div>
+  <div id="sign-pad-panel" ng-show="panel.show">
+    <div id="sign-pad-params">
+      <div ng-repeat="param in params">
+        <label>{{param.label}}</label>
+        <input type="range" class="sign-pad-param" ng-model="param.value"
+             min="{{param.min}}" max="{{param.max}}" step="{{param.step}}">
+        </input>
+      </div>
+    </div>
+    <div id="sign-pad-preview">
+      <div style="width:{{vals.min*2}}px; height:{{vals.min*2}}px;
+                  border-radius:{{vals.min}}px;
+                  background:rgb({{vals.red}},{{vals.green}},{{vals.blue}})">
+      </div>
+      <div style="width:{{vals.smooth/2}}%"></div>
+      <div style="width:{{vals.max*2}}px; height:{{vals.max*2}}px;
+                  border-radius:{{vals.max}}px;
+                  background:rgb({{vals.red}},{{vals.green}},{{vals.blue}})">
+      </div>
+    </div>
+  </div>
+</div>

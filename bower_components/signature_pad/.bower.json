@@ -1,0 +1,13 @@
+{
+  "name": "signature_pad",
+  "homepage": "https://github.com/rogerz/signature_pad",
+  "_release": "ng-sign-pad",
+  "_resolution": {
+    "type": "branch",
+    "branch": "ng-sign-pad",
+    "commit": "52955ae771616cca04112fb5f4a17adb43760bac"
+  },
+  "_source": "https://github.com/rogerz/signature_pad.git",
+  "_target": "ng-sign-pad",
+  "_originalSource": "https://github.com/rogerz/signature_pad.git"
+}
